@@ -1,0 +1,350 @@
+/********************************************/
+/**************** Miscellaneous *************/
+/********************************************/
+
+::selection {
+	background-color: #333;
+	color: #fff;
+}
+
+::-moz-selection {
+	background-color: #333;
+	color: #fff;
+}
+
+.display_none {
+	display: none;
+}
+
+/********************************************/
+/************** Loading Screen **************/
+/********************************************/
+
+#rendering-mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	background-color: #fff;
+	z-index: 100;
+	display: none;
+}
+
+.loader {
+	margin: 100px auto;
+	width: 50px;
+	height: 50px;
+	position: relative;
+}
+
+.stick-1, .stick-2, .stick-3, .stick-4 {
+	position: absolute;
+	width: 46px;
+	height: 3px;
+	top: 0;
+	left: 0;
+	-webkit-animation: sticks-loading 1.8s infinite linear;
+	animation: sticks-loading 1.8s infinite linear;
+}
+
+.stick-1 {
+	background-color: #4286f5;
+}
+
+.stick-2 {
+	background-color: #dc4437;
+	-webkit-animation-delay: -0.9s;
+	animation-delay: -0.9s;
+}
+
+.stick-3 {
+	background-color: #109d58;
+	-webkit-animation-delay: -1.35s;
+	animation-delay: -1.35s;
+}
+
+.stick-4 {
+	background-color: #f5b402;
+	-webkit-animation-delay: -.45s;
+	animation-delay: -.45s;
+}
+
+@-webkit-keyframes sticks-loading {
+	25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.9); }
+	50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg); }
+	75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.9); }
+	100% { -webkit-transform: rotate(-360deg); }
+}
+
+@keyframes sticks-loading {
+	25% {
+		-webkit-transform: translateX(42px) rotate(-90deg) scale(0.9);
+			transform: translateX(42px) rotate(-90deg) scale(0.9);
+	} 
+	50% {
+		-webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+			transform: translateX(42px) translateY(42px) rotate(-179deg);
+	}
+	50.1% {
+		-webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+			transform: translateX(42px) translateY(42px) rotate(-180deg);
+	}
+	75% {
+		-webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.9);
+			transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.9);
+	}
+  	100% {
+  		-webkit-transform: rotate(-360deg);
+  		transform: rotate(-360deg);
+  	}
+}
+
+/********************************************/
+/******************** Resets ****************/
+/********************************************/
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: "Georgia", "Times New Roman", serif;
+	font-size: 1em;
+}
+
+@media (min-width: 48em) {
+	html {
+		font-size: 1.3125em;
+	}
+}
+
+body {
+	padding: 2.5rem 1.5rem;
+	line-height: 1.5;
+	background-color: #fff;
+	color: #555;
+}
+
+p { margin: 0 0 1rem; }
+
+p.mission {
+	color: #222;
+	margin-bottom: .5rem;
+}
+
+p.mission-secondary {
+	color: #888;
+	margin-bottom: 3em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: .5rem;
+	font-weight: bold;
+	line-height: 1.15;
+	color: #222;
+}
+
+h1 { font-size: 2rem; }
+
+h2 { font-size: 1.6rem; }
+
+h3 { font-size: 1.2rem; }
+
+p + h1,
+p + h2,
+p + h3,
+ul + h1,
+ul + h2,
+ul + h3,
+ol + h1,
+ol + h2,
+ol + h3 { margin-top: 1.5rem; }
+
+hr {
+	width: 100px;
+	height: 1px;
+	margin: 3rem auto;
+	background-color: #eee;
+	border: 0;
+}
+
+img {
+	display: block;
+	margin: 0 0 1rem;
+	border-radius: .25rem;
+}
+
+
+/********************************************/
+/******************** Links *****************/
+/********************************************/
+
+a {
+	font-weight: inherit;
+	line-height: inherit;
+	color: #222;
+	text-decoration: none;
+	-webkit-transition: all .1s;
+	-moz-transition: all .1s;
+		transition: all .1s;
+}
+
+h1 a { border-bottom: 0; }
+
+.body a,
+.footer a { 
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.body a:hover,
+.footer a:hover { 
+	border-bottom-color: #222; 
+}
+
+/********************************************/
+/***************** Structure ****************/
+/********************************************/
+
+.container {
+	max-width: 32rem;
+	margin: 0 auto;
+}
+
+.masthead:after {
+	display: block;
+	content: "";
+	width: 80px;
+	height: 1px;
+	margin: 3rem auto;
+	background-color: #efefef;
+}
+
+.nav {
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.nav a { color: #222; }
+
+@media (min-width: 34em) {
+	.masthead {	
+		padding-top: 1rem;
+		text-align: right;
+	}
+	.masthead-title {
+		float: left;
+	}
+}
+
+.footer {
+  text-align: center;
+}
+
+/********************************************/
+/************** Blog Post List **************/
+/********************************************/
+
+.posts { margin-bottom: 4rem; }
+
+.posts li a small {
+	color: #999;
+}
+
+.posts li a:hover {
+	color: #333;
+	text-decoration: none;
+}
+
+.posts li a:hover small {
+	color: #333;
+}
+
+/********************************************/
+/**************** Single Post ***************/
+/********************************************/
+
+.post {
+	position: relative;
+	margin-bottom: 4rem;
+}
+
+.post img,
+.post iframe {
+	max-width: 100%;
+}
+.post iframe { 
+	margin-bottom: 1rem; 
+}
+
+.post-date {
+	display: block;
+	margin: -.5rem 0 .5rem;
+	color: #c0c0c0;
+}
+
+.page { padding-bottom: 4rem; }
+
+.page-title { margin-bottom: 2rem; }
+
+.page-body > p:first-child {
+	font-size: 1.25rem;
+}
+
+/********************************************/
+/****************** Archive *****************/
+/********************************************/
+
+.archive { margin-bottom: 3rem; }
+
+.archive-item {
+	margin-bottom: 2rem;
+}
+
+.archive-item + .archive-year {
+	margin-top: 3rem;
+}
+
+.archive-year {
+	margin-bottom: 1.5rem;
+}
+
+.archive-emoji {
+	float: left;
+}
+
+.date-emoji {
+	color: #c5c5c5;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.archive-date {
+	display: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	color: #c5c5c5;
+}
+
+@media (min-width: 34rem) {
+	.archive-item {
+		margin-bottom: 1.5rem;
+	}
+	.archive-date {
+		display: block;
+		float: right;
+		margin-left: 1rem;
+	}
+	.archive-year {
+		margin-bottom: 1.5rem;
+	}
+}
+
